@@ -3,7 +3,12 @@
   "version": "0.1.0",
   "private": true,
   "description": "Created by Propel provisioning for a repository that had no package manifest.",
-  "scripts": {},
+  "scripts": {
+    "test": "JEST_JUNIT_OUTPUT_DIR=.propel npx jest --ci --reporters=default --reporters=jest-junit; cat .propel/junit.xml"
+  },
   "dependencies": {},
-  "devDependencies": {}
+  "devDependencies": {
+    "jest": "*",
+    "jest-junit": "*"
+  }
 }
