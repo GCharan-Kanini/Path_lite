@@ -5,8 +5,3 @@ syntax_cmd: find . -path ./node_modules -prune -o \( -name '*.js' -o -name '*.mj
 build_cmd: npm run build --if-present
 dependency_file: package.json
 runtime_version: '20'
-services:
-- name: postgresql
-  image: postgres
-  env: {}
-  health_check: pg_isready -U postgres
