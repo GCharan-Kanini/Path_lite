@@ -6,7 +6,9 @@
   "scripts": {
     "test": "JEST_JUNIT_OUTPUT_DIR=.propel npx jest --ci --reporters=default --reporters=jest-junit; cat .propel/junit.xml"
   },
-  "dependencies": {},
+  "dependencies": {
+    "express": "*"
+  },
   "devDependencies": {
     "jest": "*",
     "jest-junit": "*"
