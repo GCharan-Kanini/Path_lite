@@ -56,6 +56,20 @@
 - Security requirements artifact: `docs/requirements/EP-001_security_requirements.md`
 - Security/Compliance sign-off checklist: `docs/compliance/EP-001_security_signoff.md`
 
+### 1.5 US-002 Vertical Slice Persistence Artifact Linkage
+
+To support US-002 vertical slice delivery, this requirements package references the persistence/database documentation set:
+
+- Canonical database schema: `docs/db/schema/vertical_slice_schema.sql`
+- Deterministic migration: `docs/db/migrations/001_create_vertical_slice_tables.sql`
+- Repository contract: `docs/db/repository/contracts/vertical_slice_repository_contract.md`
+- Transaction and compensation strategy: `docs/db/transaction/transaction_strategy_and_compensation.md`
+- Persistence README and operational guidance: `docs/db/README.md`
+
+Security/compliance review for these persistence artifacts must be completed in alignment with:
+
+- `docs/compliance/EP-001_security_signoff.md`
+
 ---
 
 ## 2) Human-Readable Requirements Narrative
