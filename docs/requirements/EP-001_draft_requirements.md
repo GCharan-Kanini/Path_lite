@@ -9,7 +9,7 @@
 - **Facilitator:** Delivery Lead / Business Analyst
 - **Scribe:** Project Coordinator
 - **Product Owner:** PO - EP-001
-- **Status:** Draft for Product Owner review and approval
+- **Status:** Finalized draft ready for Product Owner and Security/Compliance sign-off review
 
 ---
 
@@ -31,22 +31,30 @@
 | Constraints | Security, compliance, performance, integration, and process governance constraints |
 | Dependencies | Product Owner sign-off, engineering feasibility input, security/compliance review participation |
 
-### 1.2 Structured Acceptance Criteria (Draft)
+### 1.2 Structured Acceptance Criteria (Finalized)
 
-| AC ID | Measurable Requirement | Metric | Target |
+| AC ID | Definitive Requirement | Verification Method | Pass Threshold |
 |---|---|---|---|
-| AC-001 | In-scope and out-of-scope sections are explicit and non-overlapping | Scope ambiguity issues raised during review | 0 unresolved scope conflicts at PO review |
-| AC-002 | Decision log captures all critical decisions with rationale and owner | Decision entries with owner + status + due date | 100% of critical decisions documented |
-| AC-003 | Open questions have accountable follow-up | Open items with owner and due date | 100% of open items assigned |
-| AC-004 | Requirements draft is review-ready for Product Owner approval | PO review turnaround | Initial PO response within 2 business days |
-| AC-005 | Constraints are implementation-relevant and testable | Constraint categories covered | Security, compliance, performance, and integration all present |
+| AC-001 | Scope boundaries are explicit, non-overlapping, and traceable to workshop decisions | Reviewer checks in-scope vs out-of-scope sections and decision references | 0 unresolved scope conflicts at PO review |
+| AC-002 | Decision log captures each critical decision with rationale, owner, due date, and status lifecycle | Decision-log audit against workshop notes | 100% of critical decisions documented |
+| AC-003 | Open questions and risks have accountable follow-up ownership | Follow-up tracker review (owner + due date + status) | 100% of open items assigned |
+| AC-004 | Document is review-ready for Product Owner and Security/Compliance sign-off flow | Review request and sign-off checklist readiness check | Initial PO response within 2 business days; Security/Compliance review scheduled |
+| AC-005 | Constraints are implementation-relevant, testable, and categorized | Constraint checklist coverage verification | Security, compliance, performance, and integration categories all present |
+| AC-006 | Data classification and privacy requirements are documented and linked to sign-off governance | Data classification table + linked security and sign-off artifacts | 100% of in-scope data elements classified |
 
-### 1.3 Draft Given/When/Then Scenarios
+### 1.3 Definitive Given/When/Then Scenarios
 
-1. **Given** workshop participants align on priority capabilities, **when** the scribe records approved scope decisions, **then** the requirements draft includes clear in-scope and out-of-scope boundaries.
-2. **Given** technical or policy risks are identified, **when** constraints are reviewed, **then** each constraint is documented with category, impact, and owner.
-3. **Given** unresolved decisions remain at workshop close, **when** follow-up actions are created, **then** each unresolved item has an assignee, due date, and tracking status.
-4. **Given** the draft is circulated to the Product Owner, **when** review feedback is returned, **then** the decision log and follow-up list are updated with closed or pending status.
+1. **Given** stakeholders complete the intake workshop and agree on candidate scope items, **when** the scribe publishes EP-001 scope boundaries, **then** every item appears exactly once in either in-scope or out-of-scope and includes rationale traceability.
+2. **Given** constraints are raised by Product, Engineering, or Compliance participants, **when** the facilitator validates constraint relevance, **then** each accepted constraint is recorded with category, implementation impact, validation expectation, and accountable owner.
+3. **Given** a decision is made during workshop discussion, **when** it is entered in the decision log, **then** the entry includes decision statement, rationale, owner, due date, current status, and dependency context.
+4. **Given** unresolved questions remain at workshop close, **when** follow-up actions are created, **then** each action includes a named responsible owner, target date, escalation trigger, and current status.
+5. **Given** the draft package is submitted for Product Owner review, **when** PO feedback is returned, **then** all affected requirements, decisions, and follow-up entries are updated with approved/resolved or pending/change-requested state.
+6. **Given** EP-001 contains security-impacting requirements, **when** Security and Compliance reviewers assess the package, **then** linked artifacts for OWASP-aligned security controls, data/privacy requirements, and sign-off thresholds are present and reviewable.
+
+### 1.4 Authoritative Linked Deliverables
+
+- Security requirements artifact: `docs/requirements/EP-001_security_requirements.md`
+- Security/Compliance sign-off checklist: `docs/compliance/EP-001_security_signoff.md`
 
 ---
 
