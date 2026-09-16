@@ -1,0 +1,403 @@
+{
+  "nodes": [
+    {
+      "id": "package",
+      "label": "package.json",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L1",
+      "_origin": "ast"
+    },
+    {
+      "id": "package_name",
+      "label": "name",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L2",
+      "_origin": "ast"
+    },
+    {
+      "id": "package_version",
+      "label": "version",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L3",
+      "_origin": "ast"
+    },
+    {
+      "id": "package_private",
+      "label": "private",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L4",
+      "_origin": "ast"
+    },
+    {
+      "id": "package_description",
+      "label": "description",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L5",
+      "_origin": "ast"
+    },
+    {
+      "id": "package_scripts",
+      "label": "scripts",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L6",
+      "_origin": "ast"
+    },
+    {
+      "id": "package_scripts_test",
+      "label": "test",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L7",
+      "_origin": "ast"
+    },
+    {
+      "id": "package_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L9",
+      "_origin": "ast"
+    },
+    {
+      "id": "package_devdependencies",
+      "label": "devDependencies",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L10",
+      "_origin": "ast"
+    },
+    {
+      "id": "package_devdependencies_jest",
+      "label": "jest",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L11",
+      "_origin": "ast"
+    },
+    {
+      "id": "ref_jest",
+      "label": "jest",
+      "file_type": "concept",
+      "source_file": "package.json",
+      "source_location": "L11",
+      "_origin": "ast"
+    },
+    {
+      "id": "package_devdependencies_jest_junit",
+      "label": "jest-junit",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L12",
+      "_origin": "ast"
+    },
+    {
+      "id": "ref_jest_junit",
+      "label": "jest-junit",
+      "file_type": "concept",
+      "source_file": "package.json",
+      "source_location": "L12",
+      "_origin": "ast"
+    },
+    {
+      "id": "tests_ep001_requirements_doc_test",
+      "label": "ep001-requirements-doc.test.js",
+      "file_type": "code",
+      "source_file": "tests/ep001-requirements-doc.test.js",
+      "source_location": "L1",
+      "_origin": "ast"
+    },
+    {
+      "id": "tests_ep001_requirements_doc_test_describe_it_expect",
+      "label": "{ describe, it, expect }",
+      "file_type": "code",
+      "source_file": "tests/ep001-requirements-doc.test.js",
+      "source_location": "L1",
+      "_origin": "ast"
+    },
+    {
+      "id": "tests_ep001_requirements_doc_test_fs",
+      "label": "fs",
+      "file_type": "code",
+      "source_file": "tests/ep001-requirements-doc.test.js",
+      "source_location": "L2",
+      "_origin": "ast"
+    },
+    {
+      "id": "tests_ep001_requirements_doc_test_path",
+      "label": "path",
+      "file_type": "code",
+      "source_file": "tests/ep001-requirements-doc.test.js",
+      "source_location": "L3",
+      "_origin": "ast"
+    },
+    {
+      "id": "tests_persistence_layer_docs_test",
+      "label": "persistence-layer-docs.test.js",
+      "file_type": "code",
+      "source_file": "tests/persistence-layer-docs.test.js",
+      "source_location": "L1",
+      "_origin": "ast"
+    },
+    {
+      "id": "tests_persistence_layer_docs_test_fs",
+      "label": "fs",
+      "file_type": "code",
+      "source_file": "tests/persistence-layer-docs.test.js",
+      "source_location": "L1",
+      "_origin": "ast"
+    },
+    {
+      "id": "tests_persistence_layer_docs_test_path",
+      "label": "path",
+      "file_type": "code",
+      "source_file": "tests/persistence-layer-docs.test.js",
+      "source_location": "L2",
+      "_origin": "ast"
+    }
+  ],
+  "edges": [
+    {
+      "source": "package",
+      "target": "package_name",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L2",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "package",
+      "target": "package_version",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L3",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "package",
+      "target": "package_private",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L4",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "package",
+      "target": "package_description",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L5",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "package",
+      "target": "package_scripts",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L6",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "package_scripts",
+      "target": "package_scripts_test",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L7",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "package",
+      "target": "package_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L9",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "package",
+      "target": "package_devdependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L10",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "package_devdependencies",
+      "target": "package_devdependencies_jest",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L11",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "package",
+      "target": "ref_jest",
+      "relation": "imports",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L11",
+      "weight": 1.0,
+      "context": "import",
+      "_origin": "ast"
+    },
+    {
+      "source": "package_devdependencies",
+      "target": "package_devdependencies_jest_junit",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L12",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "package",
+      "target": "ref_jest_junit",
+      "relation": "imports",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L12",
+      "weight": 1.0,
+      "context": "import",
+      "_origin": "ast"
+    },
+    {
+      "source": "tests_ep001_requirements_doc_test",
+      "target": "ref_jest_globals",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/ep001-requirements-doc.test.js",
+      "source_location": "L1",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "tests_ep001_requirements_doc_test",
+      "target": "tests_ep001_requirements_doc_test_describe_it_expect",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/ep001-requirements-doc.test.js",
+      "source_location": "L1",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "tests_ep001_requirements_doc_test",
+      "target": "ref_fs",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/ep001-requirements-doc.test.js",
+      "source_location": "L2",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "tests_ep001_requirements_doc_test",
+      "target": "tests_ep001_requirements_doc_test_fs",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/ep001-requirements-doc.test.js",
+      "source_location": "L2",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "tests_ep001_requirements_doc_test",
+      "target": "ref_path",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/ep001-requirements-doc.test.js",
+      "source_location": "L3",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "tests_ep001_requirements_doc_test",
+      "target": "tests_ep001_requirements_doc_test_path",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/ep001-requirements-doc.test.js",
+      "source_location": "L3",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "tests_persistence_layer_docs_test",
+      "target": "ref_fs",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/persistence-layer-docs.test.js",
+      "source_location": "L1",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "tests_persistence_layer_docs_test",
+      "target": "tests_persistence_layer_docs_test_fs",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/persistence-layer-docs.test.js",
+      "source_location": "L1",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "tests_persistence_layer_docs_test",
+      "target": "ref_path",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/persistence-layer-docs.test.js",
+      "source_location": "L2",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "tests_persistence_layer_docs_test",
+      "target": "tests_persistence_layer_docs_test_path",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/persistence-layer-docs.test.js",
+      "source_location": "L2",
+      "weight": 1.0,
+      "_origin": "ast"
+    }
+  ],
+  "hyperedges": [],
+  "input_tokens": 0,
+  "output_tokens": 0,
+  "extracted_sources": [
+    "/var/lib/propel-data/workspaces/run-aa0f8cfe-d041-4997-9d47-37ae5d4ac40a/repository/docs/db/migrations/001_create_vertical_slice_tables.sql",
+    "/var/lib/propel-data/workspaces/run-aa0f8cfe-d041-4997-9d47-37ae5d4ac40a/repository/docs/db/schema/vertical_slice_schema.sql",
+    "/var/lib/propel-data/workspaces/run-aa0f8cfe-d041-4997-9d47-37ae5d4ac40a/repository/package.json",
+    "/var/lib/propel-data/workspaces/run-aa0f8cfe-d041-4997-9d47-37ae5d4ac40a/repository/tests/ep001-requirements-doc.test.js",
+    "/var/lib/propel-data/workspaces/run-aa0f8cfe-d041-4997-9d47-37ae5d4ac40a/repository/tests/persistence-layer-docs.test.js"
+  ]
+}
