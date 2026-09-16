@@ -1,0 +1,20 @@
+{
+  "package.json": {
+    "mtime": 1789533474.440468,
+    "seen": 1789533498.6965058,
+    "ast_hash": "0612b670ce01114079db6cd2d683263b",
+    "semantic_hash": "0612b670ce01114079db6cd2d683263b"
+  },
+  "tests/ep001-requirements-doc.test.js": {
+    "mtime": 1789533474.440468,
+    "seen": 1789533498.6965094,
+    "ast_hash": "74ecf3e8f6564cd23686dd675d66d1a0",
+    "semantic_hash": "74ecf3e8f6564cd23686dd675d66d1a0"
+  },
+  "tests/persistence-layer-docs.test.js": {
+    "mtime": 1789533474.440468,
+    "seen": 1789533498.696511,
+    "ast_hash": "06d2dc0f8da525a82050f854e2f4ac5f",
+    "semantic_hash": "06d2dc0f8da525a82050f854e2f4ac5f"
+  }
+}
