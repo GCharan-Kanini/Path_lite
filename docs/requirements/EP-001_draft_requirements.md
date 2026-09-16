@@ -55,6 +55,7 @@
 
 - Security requirements artifact: `docs/requirements/EP-001_security_requirements.md`
 - Security/Compliance sign-off checklist: `docs/compliance/EP-001_security_signoff.md`
+- Ambiguity thresholds and clarification guidelines: `docs/requirements/ambiguity_thresholds_clarification_guidelines.md`
 
 ### 1.5 US-002 Vertical Slice Persistence Artifact Linkage
 
