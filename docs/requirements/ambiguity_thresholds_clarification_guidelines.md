@@ -235,3 +235,46 @@ Appendix: Quick reference table (numeric values)
 - Inactivity escalation: 120s
 
 End of document
+
+
+=== Allowed-Null Guidance and Integration ===
+
+Purpose and scope
+
+This section clarifies how the allowed-null semantic (a clinician-affirmed choice to record a missing/unknown value as intentionally omitted) integrates with the thresholds and clarification flows defined above. "Allowed-null" is distinct from an empty string or a skipped slot: it is an explicit, audited action recorded by a clinician who affirms they are choosing to record no value for that field.
+
+Key rules
+
+- Allowed-null MAY be presented to the user only when the schema explicitly permits it (field-level annotation x-allowed-null: true). The UI must surface the control only when the slot's schema metadata allows.
+- For REQUIRED_CRITICAL slots, allowed-null must be gated by policy and should not be shown by default. If configured, selecting allowed-null for a REQUIRED_CRITICAL slot MUST trigger the full confirmation flow and may escalate to human-review.
+- Selecting allowed-null MUST create an audit entry that contains at minimum: session_id, field_key, allowed_null=true, nurse_user_id, timestamp, clarification_attempts_count, optional_reason_text, and correlation_id.
+- Allowed-null may be auto-suggested by the assistant only when confidences are low and the slot criticality is OPTIONAL or REQUIRED_NONCRITICAL; explicit nurse affirmation is required before recording.
+
+Confirmation flow (summary)
+
+1. Nurse selects the UI affordance: "Prefer not to answer / Record as intentionally omitted".
+2. Show confirmation modal with required/optional reason behaviour driven by x-allowed-null-reason-required.
+3. On confirm: update session state (value_tag='allowed_null'), emit AllowedNullRecorded and ClarificationResponseCaptured events, and persist secure audit entry.
+
+Deferred ambiguities (require stakeholder decisions)
+
+- Whether REQUIRED_CRITICAL fields may be allowed-null and under what role constraints (nurse vs physician). Options: disallow entirely; allow physicians only; allow nurses with mandatory escalation.
+- Reason-code taxonomy vs free-text: require fixed reason_code for critical fields and allow free-text for others.
+- Retention and access policy for plaintext allowed-null reasons: default 365 days but requires stakeholder confirmation.
+
+References
+
+- See docs/design/schemas/hemodialysis_add_new.schema.json for canonical schema annotations used in the Hemodialysis Add New form.
+
+
+=== Integration: Allowed-Null Usage and Retry/Escalation Alignment ===
+
+- The allowed-null semantic is governed by field-level annotations (see docs/design/schemas/hemodialysis_add_new.schema.json) and must only be offered when x-allowed-null: true.
+- Retry templates and escalation behaviour for allowed-null follow the same per-slot retry limits: when a nurse selects allowed-null after fewer than slot retry limits are exhausted, record allowed-null and emit AllowedNullRecorded; when allowed-null is attempted for REQUIRED_CRITICAL fields, ensure escalation rules are applied as configured.
+- Allowed-null offering phrasing (UI/voice): "If you don't know, you can select 'Prefer not to answer' and we'll proceed. Are you okay with that?" for first offering; confirmation modal uses the copy in docs/design/allowed_null_ui_pattern.md.
+
+Deferred ambiguities (additional items)
+
+- Schema migration path for adding x-allowed-null annotations across existing forms (automated vs manual).
+- Exact retained plaintext policy for allowed-null reason_text in audit stores.
+- Canonical list of reason_codes for analytic aggregation and mapping to workflow escalation.
