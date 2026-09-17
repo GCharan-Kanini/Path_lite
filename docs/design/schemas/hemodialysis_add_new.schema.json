@@ -1,4 +1,9 @@
 {
+  "x-allowed-null-metadata": {
+    "description": "Repository-level guidance for allowed-null audit and required metadata keys.",
+    "reason_required_by_default": false,
+    "audit_keys_required": ["allowed_null","allowed_null_reason_text","clarification_attempts_count","allowed_null_recorded_by","allowed_null_recorded_at"]
+  },
   "$schema": "http://json-schema.org/draft-07/schema#",
   "$id": "https://example.org/schemas/hemodialysis_add_new.schema.json",
   "title": "Hemodialysis - Add New Form Schema",
@@ -9,13 +14,13 @@
   "properties": {
     "schema_version": {
       "type": "string",
-      "pattern": "^\d+\.\d+\.\d+$",
+      "pattern": "^\d+\.\d+\.\d+$$",
       "description": "Semantic schema version in MAJOR.MINOR.PATCH format.",
       "examples": ["1.0.0"]
     },
     "form_id": { "type": "string", "format": "uuid" },
     "patient_id": { "type": "string", "minLength": 1 },
-    "session_id": { "type": ["string","null"], "x-allowed-null": true },
+    "session_id": { "type": ["string","null"], "x-allowed-null": true, "x-allowed-null-reason-required": false },
     "created_by": { "type": "string", "minLength": 1 },
     "created_at": { "type": "string", "format": "date-time" },
     "access_type": {
@@ -23,19 +28,36 @@
       "enum": ["catheter","fistula","graft","other"],
       "x-enum-canonical": { "catheter":"catheter","fistula":"arteriovenous_fistula","graft":"arteriovenous_graft","other":"other" }
     },
-    "access_type_other_detail": { "type": ["string","null"], "x-allowed-null": true },
-    "blood_flow_rate_ml_per_min": { "type": ["integer","null"], "minimum": 50, "maximum": 600, "x-allowed-null": true },
-    "dialysate_flow_rate_l_per_min": { "type": ["number","null"], "minimum": 0.5, "maximum": 2.0, "x-allowed-null": true },
+    "access_type_other_detail": { "type": ["string","null"], "x-allowed-null": true, "x-allowed-null-reason-required": false },
+    "blood_flow_rate_ml_per_min": {
+      "type": ["integer","null"],
+      "minimum": 50,
+      "maximum": 600,
+      "x-allowed-null": true,
+      "x-allowed-null-audit-keys": ["allowed_null","clarification_attempts_count","allowed_null_reason_text"],
+      "x-allowed-null-reason-required": true
+    },
+    "dialysate_flow_rate_l_per_min": {
+      "type": ["number","null"],
+      "minimum": 0.5,
+      "maximum": 2.0,
+      "x-allowed-null": true,
+      "x-allowed-null-audit-keys": ["allowed_null","clarification_attempts_count"],
+      "x-allowed-null-reason-required": true
+    },
     "dialyzer_type": { "type": "string", "enum": ["low_flux","high_flux","hemofilter","other"] },
     "anticoagulation": {
-      "type": ["object","null"], "x-allowed-null": true, "additionalProperties": false,
+      "type": ["object","null"],
+      "x-allowed-null": true,
+      "x-allowed-null-reason-required": true,
+      "additionalProperties": false,
       "properties": {
         "method": { "type": "string", "enum": ["heparin","citrate","none","other"] },
-        "dose_units": { "type": ["string","null"], "x-allowed-null": true },
-        "dose_value": { "type": ["number","null"], "minimum": 0, "x-allowed-null": true }
+        "dose_units": { "type": ["string","null"], "x-allowed-null": true, "x-allowed-null-reason-required": true },
+        "dose_value": { "type": ["number","null"], "minimum": 0, "x-allowed-null": true, "x-allowed-null-reason-required": true }
       }
     },
-    "notes": { "type": ["string","null"], "x-allowed-null": true },
+    "notes": { "type": ["string","null"], "x-allowed-null": true, "x-allowed-null-audit-keys": ["allowed_null","allowed_null_reason_text"], "x-allowed-null-reason-required": false },
     "audit": {
       "type": "object",
       "required": ["last_modified_by","last_modified_at"],
